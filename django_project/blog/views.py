@@ -11,7 +11,9 @@ def home(request):
 
 class PostListView(ListView):
     model = Post
-    # <app>/<model>_<viewtype>.html
+    template_name = 'blog/home.html'   # <app>/<model>_<viewtype>.html
+    context_object_name = 'posts'
+    
 
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
